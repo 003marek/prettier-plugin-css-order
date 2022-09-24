@@ -12,8 +12,9 @@ const preprocess = (text, options) => {
     text,
     parser: options.parser,
     pluginOptions: {
-      order: options.order,
-      keepOverrides: options.keepOverrides,
+      order:
+        options.order === "array" ? options.customOrder : options.order,
+        keepOverrides: options.keepOverrides,
     },
   });
 };
@@ -41,7 +42,19 @@ module.exports = {
           description:
             "Order properties applying outside the box model, moving inward to intrinsic changes.",
         },
+        {
+          value: "array",
+          description: "Provide an array of declaration names in the `customOrder` property.",
+        },
       ],
+    },
+    customOrder: {
+      type: "string",
+      description:
+        "An array of declaration names to sort according to their index in the array.",
+      category: "css-declaration-sorter",
+      array: true,
+      default: [{ value: [] }],
     },
     keepOverrides: {
       type: "boolean",
