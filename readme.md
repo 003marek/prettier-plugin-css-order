@@ -14,6 +14,7 @@ After installation Prettier should automatically use this plugin.
 ### Configuration
 This plugin adds two configurable keys to Prettier:
 - [`order`](https://github.com/Siilwyn/css-declaration-sorter#order) defaults to `concentric-css`.
+- `customOrder` an array of declaration names to sort according to their index in the array. Only applied if [`order`](https://github.com/Siilwyn/css-declaration-sorter#order) parameter is set to `array`.
 - [`keepOverrides`](https://github.com/Siilwyn/css-declaration-sorter#keepoverrides) defaults to `true`, for a new codebase `false` is recommended.
 
 [lgtm]: https://lgtm.com/projects/g/Siilwyn/prettier-plugin-css-order/
